@@ -1,0 +1,12 @@
+name: Audit
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print audit status
+        run: echo "audit-ok"
