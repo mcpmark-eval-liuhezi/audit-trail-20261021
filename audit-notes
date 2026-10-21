@@ -1,0 +1,59 @@
+# Handover Notes — Provenance Audit
+
+This repository is the handover skeleton for the project transfer. It is intentionally
+self-documenting: anyone who clones it can see exactly where it came from and what state
+it is in. The facts below were captured at handover time.
+
+## Repository
+
+- **Repository (owner/name):** `mcpmark-eval-liuhezi/audit-trail-20261021`
+- **Default branch:** `main`
+- **Visibility:** public
+
+## Origin (provenance)
+
+- **First commit SHA:** `9d933764a5765c0887fc7682d22b83976de16672`
+- **First commit message:** `Initial commit`
+- **First commit author:** HeziLiu (Hezi Liu), 2026-10-21T02:59:14Z — the auto-generated
+  initial commit created when the repository was initialized with its README.
+
+## Git tags
+
+- **Tag check:** the repository has **no git tags**. The tag listing returned an empty
+  list (`[]`). There are no releases or version markers to be aware of.
+
+## Handover checklist issue
+
+- **Issue:** #1 — "Handover checklist"
+  (https://github.com/mcpmark-eval-liuhezi/audit-trail-20261021/issues/1)
+- Records the first commit's SHA and the tag situation, and carries a provenance check
+  comment confirming the first commit SHA, the default branch, and the tag check result.
+
+## Audit workflow
+
+- **Workflow file path:** `.github/workflows/audit.yml`
+- **Triggers:** every `push`, plus manual `workflow_dispatch`
+- **Job:** single job `audit` on `ubuntu-latest` that prints the line `audit-ok`
+- **First run:** run #1 (ID 39537185738), triggered by the push that added the workflow
+  file, event `push`, conclusion `success`; the job log printed `audit-ok`.
+
+## Artifact check
+
+- **Artifact check outcome:** the workflow run produced **no downloadable artifacts**.
+  The artifact listing for the run returned `{"total_count": 0}` — nothing to download.
+  This is expected: the workflow only echoes a status line and uploads nothing.
+
+## Working state
+
+- The default branch `main` carries the `README.md` and the workflow file at
+  `.github/workflows/audit.yml`, with no placeholder leftovers (the temporary
+  `audit-notes-draft` scaffolding file was removed once this pull request was opened).
+- These notes themselves are delivered via the open pull request **"Add provenance
+  audit notes"** from the `audit-notes` branch, left open for teammate review.
+
+## Quick verification for the recipient
+
+1. `git log --oneline` — the root commit should be `9d93376` ("Initial commit").
+2. `git tag` — should list nothing.
+3. Review issue #1 and its comments for the recorded provenance.
+4. Push to `main` or run the workflow manually — the job should print `audit-ok`.
